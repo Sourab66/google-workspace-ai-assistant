@@ -10,35 +10,39 @@ The project combines a Streamlit frontend with an n8n AI Agent workflow, enablin
 
 ## Features
 
-- Natural language chat interface
-- Create Google Tasks
-- Schedule Google Calendar events
-- Send Gmail messages
-- Create and update Google Docs
-- Multi-step workflow automation
+- Natural language AI chat interface
 - AI Agent powered by Google Gemini
-- Integration with Google Workspace tools
+- Create, retrieve, and delete Google Tasks
+- Create and fetch Google Calendar events
+- Send and read Gmail messages
+- Create, read, and update Google Docs
+- Web search using SerpAPI for real-time information
+- Conversation context using Simple Memory
+- Multi-step workflow automation
+- Intelligent tool selection by the AI Agent
 - Webhook-based communication between Streamlit and n8n
 
 ---
 
 ## Architecture
 
-```text
 User
   ↓
 Streamlit Frontend
   ↓
 n8n Webhook
   ↓
-AI Agent (Google Gemini)
+Google Gemini AI Agent
+  ├── Simple Memory
+  ├── SerpAPI
+  ├── Google Tasks
+  ├── Google Calendar
+  ├── Gmail
+  └── Google Docs
   ↓
-Google Workspace Tools
-   ├── Google Tasks
-   ├── Google Calendar
-   ├── Gmail
-   └── Google Docs
-```
+Respond to Webhook
+  ↓
+Streamlit Response
 
 ---
 
@@ -79,8 +83,7 @@ google-all-task-workflow/
 │   ├── streamlit-ui.png
 │   ├── n8n-workflow.png
 │
-└── n8n-workflow/
-    └── google-all-task-workflow.json
+└── google-all-task-workflow.json
 ```
 
 ---
@@ -186,26 +189,6 @@ The Streamlit application sends user requests to an n8n webhook endpoint, where 
 
 ---
 
-## Screenshots
-
-### Streamlit User Interface
-
-Add screenshot:
-
-```text
-screenshots/streamlit-ui.png
-```
-
-### n8n Workflow
-
-Add screenshot:
-
-```text
-screenshots/n8n-workflow.png
-```
-
----
-
 ## Key Learnings
 
 - AI Agent design and tool calling
@@ -233,11 +216,7 @@ screenshots/n8n-workflow.png
 
 ## Author
 
-**Sourab Gairola**
-
-LinkedIn: Add your LinkedIn profile
-
-GitHub: Add your GitHub profile
+Sourab Gairola
 
 ---
 
